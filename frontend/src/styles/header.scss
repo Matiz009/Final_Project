@@ -22,14 +22,14 @@ nav {
             color: $junglegreen;
             transition: 0.3s;
             &:hover {
-                color: $lightdark;
+                color: $shamrockgreen;
             }
             >svg {
                 color: $junglegreen;
                 transition: inherit;
                 font-size: 1.5rem;
                 &:hover {
-                    color: $lightdark;
+                    color: $shamrockgreen;
                 }
             }
         }

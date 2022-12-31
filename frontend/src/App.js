@@ -3,6 +3,7 @@ import "./styles/app.scss";
 import Header from "./components/layouts/Header";
 import Home from "./components/home/home";
 import "./styles/header.scss";
+import "./styles/home.scss";
 
 function App() {
   return (
