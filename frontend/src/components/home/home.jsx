@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Founder from "./Founder";
 import Menu from "./Menu";
+import Footer from "../layouts/Footer";
 const Home = () => {
   const options = {
     initial: {
@@ -41,6 +42,7 @@ const Home = () => {
       </section>
       <Founder />
       <Menu />
+      <Footer />
     </div>
   );
 };
