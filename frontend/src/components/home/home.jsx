@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Founder from "./Founder";
+import Menu from "./Menu";
 const Home = () => {
   const options = {
     initial: {
@@ -32,13 +33,14 @@ const Home = () => {
             opacity: 1,
           }}
           transition={{
-            delay: 0.4,
+            delay: 0.6,
           }}
         >
           Explore Menu
         </motion.a>
       </section>
       <Founder />
+      <Menu />
     </div>
   );
 };
