@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Footer from "../layouts/Footer";
+
 
 const Contact = () => {
   return (
@@ -55,7 +55,6 @@ const Contact = () => {
           ></motion.div>
         </motion.div>
       </section>
-      <Footer />
     </div>
   );
 };
