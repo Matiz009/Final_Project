@@ -3,8 +3,9 @@ import "./styles/app.scss";
 import Header from "./components/layouts/Header";
 import Home from "./components/home/home";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/layouts/Footer";
 import Cart from "./components/Cart/Cart";
-
+import Shipping from "./components/Cart/Shipping";
 //style sheets
 import "./styles/header.scss";
 import "./styles/home.scss";
@@ -13,7 +14,8 @@ import "./styles/footer.scss";
 import "./styles/menu.scss";
 import "./styles/contact.scss";
 import "./styles/cart.scss";
-import Footer from "./components/layouts/Footer";
+import "./styles/shipping.scss";
+
 function App() {
   return (
     <div className="App">
@@ -27,6 +29,9 @@ function App() {
             {" "}
           </Route>{" "}
           <Route path="/cart" element={<Cart />}>
+            {" "}
+          </Route>{" "}
+          <Route path="/shipping" element={<Shipping />}>
             {" "}
           </Route>{" "}
         </Routes>{" "}

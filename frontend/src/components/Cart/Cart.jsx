@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bamboo from "../../assets/bamboo.jpg";
 
 const CartItem = ({ value, title, img, increment, decrement }) => (
@@ -25,12 +26,31 @@ const Cart = () => {
     <section className="cart">
       <main>
         <CartItem
-          title={"Cheese PLANT"}
+          title={"Bamboo Plant"}
           img={bamboo}
           value={0}
           increment={() => increment(1)}
           decrement={() => decrement(1)}
         />
+        <article>
+          <div>
+            <h4>Sub Total</h4>
+            <p>PKR {2000}</p>
+          </div>
+          <div>
+            <h4>Tax</h4>
+            <p>PKR {2000 * 0.18}</p>
+          </div>
+          <div>
+            <h4>Shipping Charges</h4>
+            <p>PKR {200}</p>
+          </div>
+          <div>
+            <h4>Total</h4>
+            <p>PKR {2000 + 200 + 2000 * 0.18}</p>
+          </div>
+          <Link to="/shipping">Checkout</Link>
+        </article>
       </main>
     </section>
   );
