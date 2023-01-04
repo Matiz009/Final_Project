@@ -36,7 +36,7 @@ const Home = () => {
             delay: 0.8,
           }}
         >
-          Explore Menu
+          Explore Featured
         </motion.a>
       </section>
       <Founder />

@@ -9,7 +9,7 @@ const Menu = () => {
   return (
     <div>
       <section id="menu">
-        <h1>MENU</h1>
+        <h1>Featured Plants</h1>
         <div>
           <MenuCard
             ItemNum={1}
@@ -31,7 +31,7 @@ const Menu = () => {
             ItemNum={3}
             plantSrc={Bamboo}
             price={3000}
-            title={"Bambo Plant"}
+            title={"Bamboo Plant"}
             delay={0.8}
             handler={addToCartHandler}
           />

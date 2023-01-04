@@ -22,7 +22,7 @@ const Founder = () => {
             Hey, Everyone I am Mati ul Rehman, the founder of plantzhub.com.
             <br />
           </p>
-          Our aim is to provide best and most beautiful plants to your house.
+          Our aim is to provide best and most beautiful plants for your houses.
         </motion.div>
       </section>
     </div>

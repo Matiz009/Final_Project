@@ -8,6 +8,8 @@ import Cart from "./components/Cart/Cart";
 import Shipping from "./components/Cart/Shipping";
 import ConfirmOrder from "./components/Cart/ConfirmOrder";
 import PaymentSuccess from "./components/Cart/PaymentSuccess";
+import Login from "./components/Login/login";
+import Profile from "./components/profile/Profile";
 
 //style sheets
 import "./styles/header.scss";
@@ -20,7 +22,8 @@ import "./styles/cart.scss";
 import "./styles/shipping.scss";
 import "./styles/confirmOrder.scss";
 import "./styles/paymentSuccess.scss";
-
+import "./styles/login.scss";
+import "./styles/profile.scss";
 function App() {
   return (
     <div className="App">
@@ -43,6 +46,12 @@ function App() {
             {" "}
           </Route>{" "}
           <Route path="/paymentSuccess" element={<PaymentSuccess />}>
+            {" "}
+          </Route>{" "}
+          <Route path="/login" element={<Login />}>
+            {" "}
+          </Route>{" "}
+          <Route path="/me" element={<Profile />}>
             {" "}
           </Route>{" "}
         </Routes>{" "}
