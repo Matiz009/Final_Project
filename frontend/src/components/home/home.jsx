@@ -18,7 +18,7 @@ const Home = () => {
       <section className="home">
         <div>
           <motion.h1 {...options}>plantzhub.com</motion.h1>
-          <motion.p {...options} transition={{ delay: 0.2 }}>
+          <motion.p {...options} transition={{ delay: 0.5 }}>
             A one stopshop for your dream plants.
           </motion.p>
         </div>
@@ -33,7 +33,7 @@ const Home = () => {
             opacity: 1,
           }}
           transition={{
-            delay: 0.6,
+            delay: 0.8,
           }}
         >
           Explore Menu

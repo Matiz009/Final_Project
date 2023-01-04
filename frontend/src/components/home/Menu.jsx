@@ -16,7 +16,7 @@ const Menu = () => {
             plantSrc={croton}
             price={1000}
             title={"Croton Plant"}
-            delay={0.1}
+            delay={0.8}
             handler={addToCartHandler}
           />
           <MenuCard
@@ -24,7 +24,7 @@ const Menu = () => {
             plantSrc={philodendron}
             price={2000}
             title={"Philodendron Silver Plant"}
-            delay={0.5}
+            delay={0.8}
             handler={addToCartHandler}
           />
           <MenuCard
