@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./styles/app.scss";
 import Header from "./components/layouts/Header";
 import Home from "./components/home/home";
 import Contact from "./components/Contact/Contact";
@@ -10,8 +9,10 @@ import ConfirmOrder from "./components/Cart/ConfirmOrder";
 import PaymentSuccess from "./components/Cart/PaymentSuccess";
 import Login from "./components/Login/login";
 import Profile from "./components/profile/Profile";
-
+import MyOrders from "./components/MyOrders/myOrders";
+import OrderDetails from "./components/MyOrders/OrderDetails";
 //style sheets
+import "./styles/app.scss";
 import "./styles/header.scss";
 import "./styles/home.scss";
 import "./styles/founder.scss";
@@ -24,6 +25,9 @@ import "./styles/confirmOrder.scss";
 import "./styles/paymentSuccess.scss";
 import "./styles/login.scss";
 import "./styles/profile.scss";
+import "./styles/table.scss";
+import "./styles/OrderDetails.scss";
+
 function App() {
   return (
     <div className="App">
@@ -52,6 +56,12 @@ function App() {
             {" "}
           </Route>{" "}
           <Route path="/me" element={<Profile />}>
+            {" "}
+          </Route>{" "}
+          <Route path="/myOrders" element={<MyOrders />}>
+            {" "}
+          </Route>{" "}
+          <Route path="/order/:id" element={<OrderDetails />}>
             {" "}
           </Route>{" "}
         </Routes>{" "}
