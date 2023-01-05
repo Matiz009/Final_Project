@@ -12,6 +12,9 @@ import Profile from "./components/profile/Profile";
 import MyOrders from "./components/MyOrders/myOrders";
 import OrderDetails from "./components/MyOrders/OrderDetails";
 import Dashboard from "./components/admin/Dashboard";
+import Users from "./components/admin/Users";
+import Orders from "./components/admin/Orders";
+
 //style sheets
 import "./styles/app.scss";
 import "./styles/header.scss";
@@ -29,7 +32,6 @@ import "./styles/profile.scss";
 import "./styles/table.scss";
 import "./styles/OrderDetails.scss";
 import "./styles/Dashboard.scss";
-
 function App() {
   return (
     <div className="App">
@@ -69,6 +71,8 @@ function App() {
           <Route path="/admin/dashboard" element={<Dashboard />}>
             {" "}
           </Route>{" "}
+          <Route path="/admin/orders" element={<Orders />} />
+          <Route path="/admin/users" element={<Users />} />
         </Routes>{" "}
         <Footer />
       </Router>{" "}
