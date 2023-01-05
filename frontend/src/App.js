@@ -11,6 +11,7 @@ import Login from "./components/Login/login";
 import Profile from "./components/profile/Profile";
 import MyOrders from "./components/MyOrders/myOrders";
 import OrderDetails from "./components/MyOrders/OrderDetails";
+import Dashboard from "./components/admin/Dashboard";
 //style sheets
 import "./styles/app.scss";
 import "./styles/header.scss";
@@ -27,6 +28,7 @@ import "./styles/login.scss";
 import "./styles/profile.scss";
 import "./styles/table.scss";
 import "./styles/OrderDetails.scss";
+import "./styles/Dashboard.scss";
 
 function App() {
   return (
@@ -62,6 +64,9 @@ function App() {
             {" "}
           </Route>{" "}
           <Route path="/order/:id" element={<OrderDetails />}>
+            {" "}
+          </Route>{" "}
+          <Route path="/admin/dashboard" element={<Dashboard />}>
             {" "}
           </Route>{" "}
         </Routes>{" "}
