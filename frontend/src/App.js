@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./components/About/about";
 import Header from "./components/layouts/Header";
 import Home from "./components/home/home";
 import Contact from "./components/Contact/Contact";
@@ -14,6 +15,7 @@ import OrderDetails from "./components/MyOrders/OrderDetails";
 import Dashboard from "./components/admin/Dashboard";
 import Users from "./components/admin/Users";
 import Orders from "./components/admin/Orders";
+import NotFound from "./components/layouts/NotFound";
 
 //style sheets
 import "./styles/app.scss";
@@ -32,6 +34,7 @@ import "./styles/profile.scss";
 import "./styles/table.scss";
 import "./styles/OrderDetails.scss";
 import "./styles/Dashboard.scss";
+import "./styles/about.scss";
 function App() {
   return (
     <div className="App">
@@ -73,6 +76,8 @@ function App() {
           </Route>{" "}
           <Route path="/admin/orders" element={<Orders />} />
           <Route path="/admin/users" element={<Users />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>{" "}
         <Footer />
       </Router>{" "}
