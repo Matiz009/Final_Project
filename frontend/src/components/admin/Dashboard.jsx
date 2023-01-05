@@ -6,7 +6,7 @@ import Loader from "../layouts/Loader";
 
 ChartJS.register(Tooltip, ArcElement, Legend);
 
-const loading = false;
+const loading = true;
 
 const Box = ({ title, value }) => (
   <div>
