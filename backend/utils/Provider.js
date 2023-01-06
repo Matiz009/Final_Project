@@ -1,6 +1,7 @@
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import passport from "passport";
 import { UserModel } from "../models/UserModel.js";
+
 export const connectPassport = () => {
     passport.use(
         new GoogleStrategy({
@@ -9,10 +10,10 @@ export const connectPassport = () => {
                 callbackURL: process.env.GOOGLE_CALLBACK_URL,
             },
             async function(accessToken, refreshToken, profile, done) {
-                //Database comes here
                 const user = await UserModel.findOne({
                     googleId: profile.id,
                 });
+
                 if (!user) {
                     const newUser = await UserModel.create({
                         googleId: profile.id,
@@ -21,16 +22,18 @@ export const connectPassport = () => {
                     });
                     return done(null, newUser);
                 } else {
-                    done(null, user);
+                    return done(null, user);
                 }
             }
         )
     );
+
     passport.serializeUser((user, done) => {
         done(null, user.id);
     });
+
     passport.deserializeUser(async(id, done) => {
-        //const user = await User.findById(id);
+        const user = await UserModel.findById(id);
         done(null, user);
     });
 };
