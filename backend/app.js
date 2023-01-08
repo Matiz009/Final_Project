@@ -34,6 +34,8 @@ connectPassport();
 //importing routes
 import usersRoute from "./routes/users.js";
 app.use("/api/v1", usersRoute);
+import orderRoute from "./routes/orders.js";
+app.use("/api/v1", orderRoute);
 
 //using error middleware
 app.use(errorMiddleware);
