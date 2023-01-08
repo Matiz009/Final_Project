@@ -1,4 +1,4 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import dotenv from "dotenv";
 import { connectPassport } from "./utils/Provider.js";
 import session from "express-session";
@@ -14,6 +14,12 @@ dotenv.config({
 
 //using middleWares
 app.use(cookieParser());
+app.use(express.json());
+app.use(
+    urlencoded({
+        extended: true,
+    })
+);
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
