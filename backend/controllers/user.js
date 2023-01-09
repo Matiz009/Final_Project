@@ -1,3 +1,5 @@
+import { asyncError } from "../middlewares/errorMiddleware.js";
+import { UserModel } from "../models/UserModel.js";
 export const myProfile = (req, res, next) => {
     res.status(200).json({
         success: true,
@@ -15,3 +17,11 @@ export const logout = (req, res, next) => {
         });
     });
 };
+
+export const getAdminUsers = asyncError(async(req, res, next) => {
+    const users = await UserModel.find();
+    res.status(200).json({
+        success: true,
+        users,
+    });
+});

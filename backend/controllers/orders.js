@@ -29,9 +29,7 @@ export const placeOrder = asyncError(async(req, res, next) => {
     });
 });
 export const getMyOrders = asyncError(async(req, res, next) => {
-    const orders = await OrderModel.find({
-        user: req.user._id,
-    }).populate("user", "name");
+    const orders = await OrderModel.find();
 
     res.status(200).json({
         success: true,
@@ -40,13 +38,42 @@ export const getMyOrders = asyncError(async(req, res, next) => {
 });
 
 export const getOrderDetails = asyncError(async(req, res, next) => {
-    const order = await OrderModel.findById(req.params.id).populate(
-        "user",
-        "name"
-    );
-    if (order) return next(new ErrorHandler("invalid order id", 404));
+    try {
+        const order = await OrderModel.findById(req.params.id);
+        if (!order) {
+            return res.status(400).send("Record not present");
+        }
+        return res.send(order);
+    } catch (err) {
+        res.status(400).send("invalid id");
+        console.log(err);
+    }
+});
+export const getAdminOrders = asyncError(async(req, res, next) => {
+    const orders = await OrderModel.find();
+
     res.status(200).json({
         success: true,
-        order,
+        orders,
+    });
+});
+
+export const processOrder = asyncError(async(req, res, next) => {
+    const order = await OrderModel.findById(req.params.id);
+
+    if (!order) return next(new ErrorHandler("Invalid Order Id", 404));
+
+    if (order.orderStatus === "Preparing") order.orderStatus = "Shipped";
+    else if (order.orderStatus === "Shipped") {
+        order.orderStatus = "Delivered";
+        order.deliveredAt = new Date(Date.now());
+    } else if (order.orderStatus === "Delivered")
+        return next(new ErrorHandler("Food Already Delivered", 400));
+
+    await order.save();
+
+    res.status(200).json({
+        success: true,
+        message: "Status Updated Successfully",
     });
 });
