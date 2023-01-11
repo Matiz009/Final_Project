@@ -37,20 +37,47 @@ const Cart = () => {
     switch (item) {
       case 1:
         dispatch({ type: "bambooPlantIncrement" });
+        dispatch({ type: "calculatePrice" });
         break;
       case 2:
         dispatch({ type: "crotonPlantIncrement" });
+         dispatch({ type: "calculatePrice" });
         break;
       case 3:
         dispatch({ type: "philodendronPlantIncrement" });
+         dispatch({ type: "calculatePrice" });
         break;
       default:
         dispatch({ type: "bambooPlantIncrement" });
+         dispatch({ type: "calculatePrice" });
         break;
     }
   };
 
-  const decrement = (item) => {};
+  const decrement = (item) => {
+    switch (item) {
+      case 1:
+        if (bambooPlant === 0) break;
+        dispatch({ type: "bambooPlantDecrement" });
+        dispatch({ type: "calculatePrice" });
+        break;
+      case 2:
+        if (crotonPlant === 0) break;
+        dispatch({ type: "crotonPlantDecrement" });
+        dispatch({ type: "calculatePrice" });
+        break;
+      case 3:
+        if (philodendronPlant === 0) break;
+        dispatch({ type: "philodendronPlantDecrement" });
+        dispatch({ type: "calculatePrice" });
+        break;
+      default:
+        if (bambooPlant === 0) break;
+        dispatch({ type: "bambooPlantDecrement" });
+        dispatch({ type: "calculatePrice" });
+        break;
+    }
+  };
 
   return (
     <section className="cart">

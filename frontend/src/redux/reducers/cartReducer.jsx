@@ -8,11 +8,11 @@ const initialState = {
     },
     crotonPlant: {
       quantity: 0,
-      price: 900,
+      price: 500,
     },
     philodendronPlant: {
       quantity: 0,
-      price: 800,
+      price: 1000,
     },
   },
   subTotal: 0,
@@ -40,5 +40,16 @@ export const cartReducer = createReducer(initialState, {
   },
   philodendronPlantDecrement: (state) => {
     state.cartItems.philodendronPlant.quantity -= 1;
+  },
+  calculatePrice: (state) => {
+    state.subTotal =
+      state.cartItems.bambooPlant.price * state.cartItems.bambooPlant.quantity +
+      state.cartItems.crotonPlant.price * state.cartItems.crotonPlant.quantity +
+      state.cartItems.philodendronPlant.price *
+        state.cartItems.philodendronPlant.quantity;
+
+    state.tax = state.subTotal * 0.18;
+    state.shippingCharges = state.subTotal > 1000 ? 0 : 200;
+    state.total = state.subTotal + state.tax + state.shippingCharges;
   },
 });
