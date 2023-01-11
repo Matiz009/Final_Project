@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import pic1 from "../../assets/bamboo.jpg";
 import pic2 from "../../assets/croton.jpg";
@@ -25,14 +25,30 @@ const Cart = () => {
     cartItems: {
       bambooPlant: { quantity: bambooPlant },
       crotonPlant: { quantity: crotonPlant },
-      philodedronPlant: { quantity: philodedronPlant },
+      philodendronPlant: { quantity: philodendronPlant },
     },
     subTotal,
     tax,
     shippingCharges,
     total,
   } = useSelector((state) => state.cart);
-  const increment = (item) => {};
+  const dispatch = useDispatch();
+  const increment = (item) => {
+    switch (item) {
+      case 1:
+        dispatch({ type: "bambooPlantIncrement" });
+        break;
+      case 2:
+        dispatch({ type: "crotonPlantIncrement" });
+        break;
+      case 3:
+        dispatch({ type: "philodendronPlantIncrement" });
+        break;
+      default:
+        dispatch({ type: "bambooPlantIncrement" });
+        break;
+    }
+  };
 
   const decrement = (item) => {};
 
@@ -50,15 +66,15 @@ const Cart = () => {
           title={"Croton Plant"}
           img={pic2}
           value={crotonPlant}
-          increment={() => increment(1)}
-          decrement={() => decrement(1)}
+          increment={() => increment(2)}
+          decrement={() => decrement(2)}
         />
         <CartItem
-          title={"Philodedron Plant"}
+          title={"Philodendron Plant"}
           img={pic3}
-          value={philodedronPlant}
-          increment={() => increment(1)}
-          decrement={() => decrement(1)}
+          value={philodendronPlant}
+          increment={() => increment(3)}
+          decrement={() => decrement(3)}
         />
         <article>
           <div>
