@@ -21,6 +21,7 @@ const Profile = () => {
   const logoutHandler = () => {
     dispatch(logout());
   };
+  console.log(user.photo);
   return (
     <section className="profile">
       {loading === false ? (
