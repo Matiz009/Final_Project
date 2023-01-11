@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import pic1 from "../../assets/bamboo.jpg";
@@ -41,15 +41,15 @@ const Cart = () => {
         break;
       case 2:
         dispatch({ type: "crotonPlantIncrement" });
-         dispatch({ type: "calculatePrice" });
+        dispatch({ type: "calculatePrice" });
         break;
       case 3:
         dispatch({ type: "philodendronPlantIncrement" });
-         dispatch({ type: "calculatePrice" });
+        dispatch({ type: "calculatePrice" });
         break;
       default:
         dispatch({ type: "bambooPlantIncrement" });
-         dispatch({ type: "calculatePrice" });
+        dispatch({ type: "calculatePrice" });
         break;
     }
   };
