@@ -6,7 +6,7 @@ const Schema = new mongoose.Schema({
         state: { type: String, required: true },
         country: { type: String, required: true },
         pinCode: { type: Number, required: true },
-        phoneNo: { type: Number, required: true },
+        //phoneNo: { type: Number, required: true },
     },
     orderItems: {
         bambooPlant: {
