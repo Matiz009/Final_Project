@@ -6,7 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "../../styles/colors.scss";
 
-const Header = ({ isAuthenticated = false }) => {
+const Header = ({ isAuthenticated }) => {
   return (
     <div>
       <nav>

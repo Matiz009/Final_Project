@@ -39,6 +39,7 @@ import "./styles/table.scss";
 import "./styles/OrderDetails.scss";
 import "./styles/Dashboard.scss";
 import "./styles/about.scss";
+
 function App() {
   const dispatch = useDispatch();
   const { error, message, isAuthenticated } = useSelector(
@@ -60,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <Router isAuthenticated={isAuthenticated}>
-        <Header />
+        <Header isAuthenticated={isAuthenticated} />
         <Routes>
           <Route path="/" element={<Home />}>
             {" "}

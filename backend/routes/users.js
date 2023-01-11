@@ -17,7 +17,7 @@ router.get(
     })
 );
 router.get("/googleLogin", (req, res, next) => {
-    res.send("Logged IN!");
+    res.redirect(process.env.FRONTEND_URL);
 });
 
 router.get("/me", isAuthenticated, myProfile);
