@@ -3,9 +3,36 @@ import MenuCard from "./MenuCard";
 import croton from "../../assets/croton.jpg";
 import philodendron from "../../assets/philodendron.jpg";
 import Bamboo from "../../assets/bamboo.jpg";
-
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 const Menu = () => {
-  const addToCartHandler = (ItemNum) => {};
+  const dispatch = useDispatch();
+
+  const addToCartHandler = (itemNum) => {
+    switch (itemNum) {
+      case 1:
+        dispatch({ type: "bambooPlantIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+      case 2:
+        dispatch({ type: "crotonPlantIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+      case 3:
+        dispatch({ type: "philodendronPlantIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+
+      default:
+        dispatch({ type: "bambooPlantIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+    }
+  };
   return (
     <div>
       <section id="menu">

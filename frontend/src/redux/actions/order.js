@@ -46,3 +46,34 @@ export const createOrder =
             });
         }
     };
+
+export const getMyOrders = () => async(dispatch) => {
+    try {
+        dispatch({ type: "getMyOrdersRequest" });
+
+        const { data } = await axios.get(`${server}/myOrders`, {
+            withCredentials: true,
+        });
+
+        dispatch({ type: "getMyOrdersSuccess", payload: data.orders });
+    } catch (error) {
+        dispatch({ type: "getMyOrdersFail", payload: error.response.data.message });
+    }
+};
+
+export const getOrderDetails = (id) => async(dispatch) => {
+    try {
+        dispatch({ type: "getOrderDetailsRequest" });
+
+        const { data } = await axios.get(`${server}/order/${id}`, {
+            withCredentials: true,
+        });
+
+        dispatch({ type: "getOrderDetailsSuccess", payload: data.order });
+    } catch (error) {
+        dispatch({
+            type: "getOrderDetailsFail",
+            payload: error.response.data.message,
+        });
+    }
+};
